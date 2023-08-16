@@ -46,6 +46,7 @@ call plug#end()
 let g:LanguageClient_serverCommands = {
     \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
     \ 'go': ['gopls'],
+    \ 'terraform': ['terraform-ls', 'serve'],
     \ }
 
 autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
