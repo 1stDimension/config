@@ -35,11 +35,20 @@ call plug#begin()
  Plug 'godlygeek/tabular'
  Plug 'preservim/vim-markdown'
 
+ Plug 'nvim-lua/plenary.nvim'
+ Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.2' }
+ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+ Plug 'nvim-treesitter/playground'
+ Plug 'mbbill/undotree'
+
 call plug#end()
 
 let g:LanguageClient_serverCommands = {
     \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+    \ 'go': ['gopls'],
     \ }
+
+autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
 
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
