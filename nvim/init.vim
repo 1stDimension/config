@@ -38,6 +38,7 @@ call plug#begin()
  Plug 'nvim-lua/plenary.nvim'
  Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.2' }
  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+ Plug 'nvim-treesitter/nvim-treesitter-context'
  Plug 'nvim-treesitter/playground'
  Plug 'mbbill/undotree'
 
