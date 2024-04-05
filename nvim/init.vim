@@ -48,6 +48,7 @@ let g:LanguageClient_serverCommands = {
     \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
     \ 'go': ['gopls'],
     \ 'terraform': ['terraform-ls', 'serve'],
+    \ 'python': ['ruff-lsp'],
     \ }
 
 autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
